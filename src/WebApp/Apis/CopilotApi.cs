@@ -50,11 +50,12 @@ namespace eShop.WebApp.Apis
             
             # for system process
             After answering the customer, you should append the id information about the customer's question at the end of your answer.
-            If customer ask for a brand: {"question":{"brandId":"Brand Id"}}
-            if customer ask for a type: {"question":{"typeId":"Type Id"}}
-            if customer ask for a product: {"question":{"productId":"Product Id"}}
-            if customer ask for  change basket: {"question":{"basket":1}}
-            if customer ask for bran and type:{"question":{"brandId":"Brand Id","typeId":"Type Id"}}
+            If customer ask for a brand: {"question":{"brandId":1}}
+            if customer ask for a type: {"question":{"typeId":4}}
+            if customer ask for a product: {"question":{"productId":2}}
+            if customer ask for  add product to basket/cart: {"question":{"basket":true}}
+            if customer ask for bran and type:{"question":{"brandId":1,"typeId":2}}
+            the append information must be Id of the product, brand or type, if there have no Id, you can ignore it.
             """);
                 chatHistory.AddAssistantMessage("Hi! I'm the Northern Mountains Concierge. How can I help?");
                 myCache.Set(sessionId, chatHistory);
